@@ -8,21 +8,23 @@ namespace CommonProject
 {
     public class CommonExceptionTest
     {
-        public void CodeExceptionInMainThread()
+        private readonly bool FUseCodeException = false;
+
+        public CommonExceptionTest(bool aUseCodeException)
         {
-            var thrower = new ExceptionThrower();
-            thrower.RaiseException();
+            FUseCodeException = aUseCodeException;
         }
 
-        public void ThrowExceptionInMainThread()
+        public void ExceptionInMainThread()
         {
             var thrower = new ExceptionThrower();
-            thrower.RaiseException();
+            thrower.RaiseException(FUseCodeException);
         }
 
-        public void CodeExceptionInBackgrounThread()
+        public void ExceptionInBackgroundThread()
         {
-            //Thread thread = new Thread();
+            Thread thread = new Thread(new ThreadStart(ExceptionInMainThread));
+            thread.Start();
         }
     }
 

@@ -19,7 +19,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\Output\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -89,6 +89,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommonProject\CommonProject.csproj">
+      <Project>{baaba584-59e8-4b03-989e-8f5bfb797251}</Project>
+      <Name>CommonProject</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WpfControlProject\WpfControlProject.csproj">
+      <Project>{9a3afc89-12b9-46d3-8a18-fa7e3b907c9d}</Project>
+      <Name>WpfControlProject</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
