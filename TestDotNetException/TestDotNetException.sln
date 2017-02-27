@@ -5,6 +5,20 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonProject", "CommonProject\CommonProject.csproj", "{BAABA584-59E8-4B03-989E-8F5BFB797251}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsControlProject", "WindowsFormsControlProject\WindowsFormsControlProject.csproj", "{3B7D4504-E080-4295-B19F-92EDEC5D674F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfControlProject", "WpfControlProject\WpfControlProject.csproj", "{9A3AFC89-12B9-46D3-8A18-FA7E3B907C9D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsIncludeWpfApplication", "WindowsFormsIncludeWpfApplication\WindowsFormsIncludeWpfApplication.csproj", "{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfIncludeWindowsFormsApplication", "WpfIncludeWindowsFormsApplication\WpfIncludeWindowsFormsApplication.csproj", "{D4883635-B84C-4DF4-96F6-77CA3748CC3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfOnlyApplication", "WpfOnlyApplication\WpfOnlyApplication.csproj", "{DBF94FDA-1074-45B3-9252-8AF1C79E766B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsOnlyApplication", "WindowsFormsOnlyApplication\WindowsFormsOnlyApplication.csproj", "{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "StartUpProject", "StartUpProject", "{A0EB5C75-8D6A-4415-9896-FC10EEE64BBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +29,38 @@ Global
 		{BAABA584-59E8-4B03-989E-8F5BFB797251}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BAABA584-59E8-4B03-989E-8F5BFB797251}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BAABA584-59E8-4B03-989E-8F5BFB797251}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B7D4504-E080-4295-B19F-92EDEC5D674F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B7D4504-E080-4295-B19F-92EDEC5D674F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B7D4504-E080-4295-B19F-92EDEC5D674F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B7D4504-E080-4295-B19F-92EDEC5D674F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9A3AFC89-12B9-46D3-8A18-FA7E3B907C9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A3AFC89-12B9-46D3-8A18-FA7E3B907C9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A3AFC89-12B9-46D3-8A18-FA7E3B907C9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A3AFC89-12B9-46D3-8A18-FA7E3B907C9D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4883635-B84C-4DF4-96F6-77CA3748CC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4883635-B84C-4DF4-96F6-77CA3748CC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4883635-B84C-4DF4-96F6-77CA3748CC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4883635-B84C-4DF4-96F6-77CA3748CC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF94FDA-1074-45B3-9252-8AF1C79E766B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF94FDA-1074-45B3-9252-8AF1C79E766B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF94FDA-1074-45B3-9252-8AF1C79E766B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF94FDA-1074-45B3-9252-8AF1C79E766B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{492B0365-7FF3-4D90-A4F4-B7E6C83C39D6} = {A0EB5C75-8D6A-4415-9896-FC10EEE64BBD}
+		{D4883635-B84C-4DF4-96F6-77CA3748CC3B} = {A0EB5C75-8D6A-4415-9896-FC10EEE64BBD}
+		{DBF94FDA-1074-45B3-9252-8AF1C79E766B} = {A0EB5C75-8D6A-4415-9896-FC10EEE64BBD}
+		{C8D5851D-5AC7-43B4-B7E9-85E378C26D6B} = {A0EB5C75-8D6A-4415-9896-FC10EEE64BBD}
 	EndGlobalSection
 EndGlobal
