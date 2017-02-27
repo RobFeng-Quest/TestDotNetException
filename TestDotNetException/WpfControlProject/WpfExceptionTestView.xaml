@@ -1,17 +1,24 @@
 ﻿<UserControl x:Class="WpfControlProject.WpfExceptionTestView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfControlProject"
-             mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="300"
+             d:DesignWidth="300"
+             mc:Ignorable="d">
     <StackPanel>
         <Button x:Name="ExceptionInMainThread"
-                Content="Exception in main thred"
-                Click="ExceptionInMainThread_Click" />
+                Click="ExceptionInMainThread_Click"
+                Content="Exception in main thread"
+                ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
         <Button x:Name="ExceptionInBackgroundThread"
-                Content="Exception in background thred"
-                Click="ExceptionInBackgroundThread_Click" />
+                Click="ExceptionInBackgroundThread_Click"
+                Content="Exception in background thread"
+                ToolTip="Handle by: AppDomain.CurrentDomain.UnhandledException" />
+        <Button x:Name="InvokeExceptionInMainThread"
+                Click="InvokeExceptionInMainThread_Click"
+                Content="Invoke Exception in background thread"
+                ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
     </StackPanel>
 </UserControl>
