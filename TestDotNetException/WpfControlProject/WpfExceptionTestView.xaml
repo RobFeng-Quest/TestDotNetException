@@ -16,9 +16,13 @@
                 Click="ExceptionInBackgroundThread_Click"
                 Content="Exception in background thread"
                 ToolTip="Handle by: AppDomain.CurrentDomain.UnhandledException" />
+        <Button x:Name="ExceptionInTask"
+                Click="ExceptionInTask_Click"
+                Content="Exception in Task"
+                ToolTip="Handle by: AppDomain.CurrentDomain.UnhandledException" />
         <Button x:Name="InvokeExceptionInMainThread"
                 Click="InvokeExceptionInMainThread_Click"
-                Content="Invoke Exception in background thread"
+                Content="Invoke Exception in main thread"
                 ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
     </StackPanel>
 </UserControl>

@@ -47,5 +47,11 @@ namespace WpfControlProject
                 commonExceptionTest.ExceptionInMainThread();
             }));
         }
+
+        private void ExceptionInTask_Click(object sender, RoutedEventArgs e)
+        {
+            var commonExceptionTest = new CommonExceptionTest(FUseCodeException);
+            commonExceptionTest.ExceptionInTask();
+        }
     }
 }
