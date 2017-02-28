@@ -24,5 +24,7 @@
                 Click="InvokeExceptionInMainThread_Click"
                 Content="Invoke Exception in main thread"
                 ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
+        <Button x:Name="btnGC" Content="GC"
+                Click="btnGC_Click" />
     </StackPanel>
 </UserControl>

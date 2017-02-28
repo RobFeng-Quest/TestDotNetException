@@ -22,16 +22,18 @@ namespace CommonProject
             thrower.RaiseException(FUseCodeException);
         }
 
-        private void ExceptionWithSleepSecMinute()
+        private void ExceptionWithThreadSleepSecMinute()
         {
+            System.Diagnostics.Trace.WriteLine("Start sleep." + DateTime.Now.Millisecond);
             Thread.Sleep(2000);
+            System.Diagnostics.Trace.WriteLine("End sleep." + DateTime.Now.Millisecond);
             var thrower = new ExceptionThrower();
             thrower.RaiseException(FUseCodeException);
         }
 
         public void ExceptionInBackgroundThread()
         {
-            Thread thread = new Thread(new ThreadStart(ExceptionWithSleepSecMinute));
+            Thread thread = new Thread(new ThreadStart(ExceptionWithThreadSleepSecMinute));
             thread.Start();
         }
 
@@ -40,14 +42,16 @@ namespace CommonProject
             var ui = TaskScheduler.FromCurrentSynchronizationContext();
             Action doit = () =>
             {
+                //var error = Task.Factory.StartNew(
+                //    () => { ExceptionWithSleepSecMinute(); },
+                //    CancellationToken.None,
+                //    TaskCreationOptions.None,
+                //    ui);
                 var error = Task.Factory.StartNew(
-                    () => { ExceptionWithSleepSecMinute(); },
-                    CancellationToken.None,
-                    TaskCreationOptions.None,
-                    ui);
+                    () => { ExceptionWithThreadSleepSecMinute(); });
                 //try
                 //{
-                error.Wait();
+                error.RunSynchronously();
                 //}
                 //catch (Exception ex)
                 //{

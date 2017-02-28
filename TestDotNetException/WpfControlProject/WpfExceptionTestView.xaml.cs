@@ -53,5 +53,11 @@ namespace WpfControlProject
             var commonExceptionTest = new CommonExceptionTest(FUseCodeException);
             commonExceptionTest.ExceptionInTask();
         }
+
+        private void btnGC_Click(object sender, RoutedEventArgs e)
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }
