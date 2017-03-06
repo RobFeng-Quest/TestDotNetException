@@ -39,6 +39,12 @@ namespace WpfControlProject
             commonExceptionTest.ExceptionInBackgroundThread();
         }
 
+        private void ExceptionInTask_Click(object sender, RoutedEventArgs e)
+        {
+            var commonExceptionTest = new CommonExceptionTest(FUseCodeException);
+            commonExceptionTest.ExceptionInTask();
+        }
+
         private void InvokeExceptionInMainThread_Click(object sender, RoutedEventArgs e)
         {
             this.Dispatcher.BeginInvoke((Action)(() =>
@@ -46,12 +52,6 @@ namespace WpfControlProject
                 var commonExceptionTest = new CommonExceptionTest(FUseCodeException);
                 commonExceptionTest.ExceptionInMainThread();
             }));
-        }
-
-        private void ExceptionInTask_Click(object sender, RoutedEventArgs e)
-        {
-            var commonExceptionTest = new CommonExceptionTest(FUseCodeException);
-            commonExceptionTest.ExceptionInTask();
         }
 
         private void btnGC_Click(object sender, RoutedEventArgs e)

@@ -28,12 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.winformExceptionTestView1 = new WindowsFormsControlProject.WinformExceptionTestView();
+            this.SuspendLayout();
+            // 
+            // winformExceptionTestView1
+            // 
+            this.winformExceptionTestView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.winformExceptionTestView1.Location = new System.Drawing.Point(0, 0);
+            this.winformExceptionTestView1.Name = "winformExceptionTestView1";
+            this.winformExceptionTestView1.Size = new System.Drawing.Size(284, 262);
+            this.winformExceptionTestView1.TabIndex = 0;
+            // 
+            // MainWindow
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.Controls.Add(this.winformExceptionTestView1);
+            this.Name = "MainWindow";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private WindowsFormsControlProject.WinformExceptionTestView winformExceptionTestView1;
     }
 }
 

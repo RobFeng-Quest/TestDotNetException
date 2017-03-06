@@ -8,23 +8,25 @@
              d:DesignWidth="300"
              mc:Ignorable="d">
     <StackPanel>
+        <TextBlock Text="Wpf Controls" />
         <Button x:Name="ExceptionInMainThread"
                 Click="ExceptionInMainThread_Click"
                 Content="Exception in main thread"
                 ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
         <Button x:Name="ExceptionInBackgroundThread"
                 Click="ExceptionInBackgroundThread_Click"
-                Content="Exception in background thread"
+                Content="Exception in background thread (Crash)"
                 ToolTip="Handle by: AppDomain.CurrentDomain.UnhandledException" />
         <Button x:Name="ExceptionInTask"
                 Click="ExceptionInTask_Click"
                 Content="Exception in Task"
-                ToolTip="Handle by: AppDomain.CurrentDomain.UnhandledException" />
+                ToolTip="Handle by: TaskScheduler.UnobservedTaskException" />
         <Button x:Name="InvokeExceptionInMainThread"
                 Click="InvokeExceptionInMainThread_Click"
                 Content="Invoke Exception in main thread"
                 ToolTip="Handle by: Dispatcher.UnhandledException, Application.Current.DispatcherUnhandledException" />
-        <Button x:Name="btnGC" Content="GC"
-                Click="btnGC_Click" />
+        <Button x:Name="btnGC"
+                Click="btnGC_Click"
+                Content="GC" />
     </StackPanel>
 </UserControl>
