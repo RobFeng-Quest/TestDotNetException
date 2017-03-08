@@ -18,7 +18,7 @@ namespace WindowsFormsOnlyApplication
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            //Application.SetUnhandledExceptionMode(UnhandledExceptionMode.CatchException);
+            Application.SetUnhandledExceptionMode(UnhandledExceptionMode.ThrowException);
 
             AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
@@ -51,6 +51,7 @@ namespace WindowsFormsOnlyApplication
         private static void TaskScheduler_UnobservedTaskException(object sender, UnobservedTaskExceptionEventArgs e)
         {
             string errorMessage = string.Format("TaskScheduler.UnobservedTaskException - An unhandled exception occurred: {0}", e.Exception.Message + ", Observed=" + e.Observed);
+            e.SetObserved();
             MessageBox.Show(errorMessage, "Error");
         }
     }
