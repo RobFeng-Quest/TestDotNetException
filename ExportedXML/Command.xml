@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataroot xmlns:od="urn:schemas-microsoft-com:officedata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  xsi:noNamespaceSchemaLocation="Command.xsd" generated="2017-04-26T15:17:54">
+<Command>
+<ProjectID>1</ProjectID>
+<CommandName>Get_FileProductVersion</CommandName>
+<Module>File</Module>
+<Description></Description>
+<MultipleData>0</MultipleData>
+<DataTableID>3</DataTableID>
+</Command>
+<Command>
+<ProjectID>1</ProjectID>
+<CommandName>SilentInstall_MSI</CommandName>
+<Module>Install</Module>
+<Description></Description>
+<MultipleData>1</MultipleData>
+<DataTableID>1</DataTableID>
+</Command>
+<Command>
+<ProjectID>1</ProjectID>
+<CommandName>VerifyDllCopyRightAndDigSign_UnderFolder</CommandName>
+<Module>File</Module>
+<Description></Description>
+<MultipleData>1</MultipleData>
+<DataTableID>4</DataTableID>
+</Command>
+<Command>
+<ProjectID>1</ProjectID>
+<CommandName>VerifyFileProperties</CommandName>
+<Module>File</Module>
+<Description></Description>
+<MultipleData>1</MultipleData>
+<DataTableID>2</DataTableID>
+</Command>
+</dataroot>
