@@ -27,7 +27,14 @@ namespace AccessToXMLManager
         private void btnAccessToXML_Click(object sender, RoutedEventArgs e)
         {
             ATCM.AccessInterop.AccessConvertor convertor = new ATCM.AccessInterop.AccessConvertor();
-            convertor.Test();
+            convertor.ExportXMLExample();
+        }
+
+        private void btnXMLToAccess_Click(object sender, RoutedEventArgs e)
+        {
+            ATCM.AccessInterop.AccessConvertor convertor = new ATCM.AccessInterop.AccessConvertor();
+            convertor.ImportXMLExample();
+
         }
     }
 }

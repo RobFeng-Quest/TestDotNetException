@@ -12,9 +12,15 @@ namespace ATCM.AccessInterop
 {
     public class AccessConvertor
     {
-        private string XMLPath = @"C:\Users\rfeng\Desktop\Access to XML\ExportedXML";
+        /// <summary>
+        /// Will get exception "Microsoft Access can't save the output data to the file you've selected."
+        /// when the path not exist.
+        /// </summary>
+        private const string XMLPath = @"G:\Work\TestDotNetException\ExportedXML";
+        private const string EmptyDataAccessPath = @"C:\Users\rfeng\Desktop\Access to XML\ATCMDB-Empty.mdb";
+        private const string FullDataAccessPath = @"C:\Users\rfeng\Desktop\Access to XML\ATCM-All.mdb";
 
-        public void Test()
+        public void ExportXMLExample()
         {
             try
             {
@@ -27,6 +33,30 @@ namespace ATCM.AccessInterop
                 using (var bench = new Benchmark($"Export access to xml:"))
                 {
                     TestExportXML(tableNames);
+                }
+
+                //using (var bench = new Benchmark($"Import xml to access:"))
+                //{
+                //    TestImportXML(tableNames);
+                //}
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Failed to do that.");
+                Debug.WriteLine(ex.Message);
+                Debug.WriteLine("---------------------");
+                Debug.WriteLine(ex.StackTrace);
+            }
+        }
+
+        public void ImportXMLExample()
+        {
+            try
+            {
+                IEnumerable<string> tableNames = null;
+                using (var bench = new Benchmark($"Get all table name:"))
+                {
+                    tableNames = TestGetAllTableName();
                 }
 
                 using (var bench = new Benchmark($"Import xml to access:"))
@@ -47,7 +77,7 @@ namespace ATCM.AccessInterop
         {
             // https://msdn.microsoft.com/en-us/library/office/ff823157(v=office.14).aspx
             var acApp = new Microsoft.Office.Interop.Access.ApplicationClass();
-            acApp.OpenCurrentDatabase(@"C:\Users\rfeng\Desktop\Access to XML\ATCMDB-Empty.mdb", false, null);
+            acApp.OpenCurrentDatabase(EmptyDataAccessPath, false, null);
             try
             {
                 foreach (var table in aTables)
@@ -68,7 +98,7 @@ namespace ATCM.AccessInterop
         {
             // https://msdn.microsoft.com/en-us/library/office/ff193212(v=office.14).aspx
             var acApp = new Microsoft.Office.Interop.Access.ApplicationClass();
-            acApp.OpenCurrentDatabase(@"C:\Users\rfeng\Desktop\Access to XML\ATCM-All.mdb", false, null);
+            acApp.OpenCurrentDatabase(FullDataAccessPath, false, null);
             try
             {
                 foreach (var table in aTables)
@@ -93,8 +123,7 @@ namespace ATCM.AccessInterop
         {
             var tableNames = new List<string>();
 
-            var connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;" +
-                @"Data source=C:\Users\rfeng\Desktop\Access to XML\ATCM-All.mdb";
+            var connectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data source=" + FullDataAccessPath;
 
             try
             {
