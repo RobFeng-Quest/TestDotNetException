@@ -18,7 +18,7 @@ namespace ATCM.AccessInterop
     /// -- Output:
     /// Insert 10 records: 00:00:00.0617594
     /// </example>
-    public class Benchmark : IDisposable
+    internal class Benchmark : IDisposable
     {
         private readonly Stopwatch FTimer = new Stopwatch();
         private readonly string FBenchmarkName;

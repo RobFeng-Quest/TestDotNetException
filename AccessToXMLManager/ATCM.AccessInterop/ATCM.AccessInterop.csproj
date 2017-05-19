@@ -57,7 +57,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccessConstants.cs" />
     <Compile Include="AccessConvertor.cs" />
+    <Compile Include="AccessExporter.cs" />
+    <Compile Include="AccessImporter.cs" />
     <Compile Include="Benchmark.cs" />
     <Compile Include="DataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

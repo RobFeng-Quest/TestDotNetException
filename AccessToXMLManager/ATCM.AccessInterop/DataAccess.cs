@@ -6,7 +6,7 @@ using System.Data.OleDb;
 namespace ATCM.AccessInterop
 {
 
-    public class DataAccess
+    internal class DataAccess
     {
         public static DataTable GetTableFromQuery(string query, Dictionary<string, object> parameters, CommandType commandType)
         {

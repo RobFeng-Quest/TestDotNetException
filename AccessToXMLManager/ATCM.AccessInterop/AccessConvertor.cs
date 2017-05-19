@@ -16,7 +16,7 @@ namespace ATCM.AccessInterop
         /// Will get exception "Microsoft Access can't save the output data to the file you've selected."
         /// when the path not exist.
         /// </summary>
-        private const string XMLPath = @"G:\Work\TestDotNetException\ExportedXML";
+        private const string ExportFilePath = @"C:\Users\rfeng\Desktop\Access to XML\ExportedXML";
         private const string EmptyDataAccessPath = @"C:\Users\rfeng\Desktop\Access to XML\ATCMDB-Empty.mdb";
         private const string FullDataAccessPath = @"C:\Users\rfeng\Desktop\Access to XML\ATCM-All.mdb";
 
@@ -24,15 +24,18 @@ namespace ATCM.AccessInterop
         {
             try
             {
-                IEnumerable<string> tableNames = null;
-                using (var bench = new Benchmark($"Get all table name:"))
-                {
-                    tableNames = TestGetAllTableName();
-                }
+                //IEnumerable<string> tableNames = null;
+                //using (var bench = new Benchmark($"Get all table name:"))
+                //{
+                //    tableNames = TestGetAllTableName();
+                //}
 
                 using (var bench = new Benchmark($"Export access to xml:"))
                 {
-                    TestExportXML(tableNames);
+                    //TestExportXML(tableNames);
+
+                    var exporter = new AccessExporter();
+                    exporter.Export(FullDataAccessPath, ExportFilePath);
                 }
 
                 //using (var bench = new Benchmark($"Import xml to access:"))
@@ -53,15 +56,18 @@ namespace ATCM.AccessInterop
         {
             try
             {
-                IEnumerable<string> tableNames = null;
-                using (var bench = new Benchmark($"Get all table name:"))
-                {
-                    tableNames = TestGetAllTableName();
-                }
+                //IEnumerable<string> tableNames = null;
+                //using (var bench = new Benchmark($"Get all table name:"))
+                //{
+                //    tableNames = TestGetAllTableName();
+                //}
 
                 using (var bench = new Benchmark($"Import xml to access:"))
                 {
-                    TestImportXML(tableNames);
+                    //TestImportXML(tableNames);
+
+                    var importer = new AccessImporter();
+                    importer.Import(EmptyDataAccessPath, ExportFilePath);
                 }
             }
             catch (Exception ex)
@@ -82,7 +88,7 @@ namespace ATCM.AccessInterop
             {
                 foreach (var table in aTables)
                 {
-                    var dataTargetPath = Path.Combine(XMLPath, table + ".xml");
+                    var dataTargetPath = Path.Combine(ExportFilePath, table + ".xml");
                     acApp.ImportXML(
                         DataSource: dataTargetPath,
                         ImportOptions: AcImportXMLOption.acStructureAndData);
@@ -103,8 +109,8 @@ namespace ATCM.AccessInterop
             {
                 foreach (var table in aTables)
                 {
-                    var dataTargetPath = Path.Combine(XMLPath, table + ".xml");
-                    var schemaTargetPath = Path.Combine(XMLPath, table + ".xsd");
+                    var dataTargetPath = Path.Combine(ExportFilePath, table + ".xml");
+                    var schemaTargetPath = Path.Combine(ExportFilePath, table + ".xsd");
                     acApp.ExportXML(
                         ObjectType: AcExportXMLObjectType.acExportTable,
                         DataSource: table,
